@@ -6,7 +6,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
     if (!Array.isArray(sampleUserData)) {
       throw new Error('Cannot find user data')
     }
-
+    console.log(process.env.GITHUB_ID);
     res.status(200).json(sampleUserData)
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message })
